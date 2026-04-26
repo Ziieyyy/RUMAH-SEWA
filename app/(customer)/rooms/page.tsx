@@ -41,7 +41,7 @@ export default async function RoomsPage() {
       </div>
 
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-        {displayRooms.map((room, i) => (
+        {displayRooms.map((room: any, i: number) => (
           <Card key={room.id} className="overflow-hidden hover:shadow-lg transition-shadow">
             <div className="h-48 relative bg-secondary/20">
               <div className="absolute top-4 right-4 z-10">

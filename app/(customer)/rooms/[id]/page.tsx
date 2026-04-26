@@ -76,7 +76,7 @@ export default async function RoomDetail({ params }: { params: Promise<{ id: str
           {/* Gallery */}
           {room.images.length > 1 && (
             <div className="grid grid-cols-3 gap-4">
-              {room.images.slice(1).map((img, idx) => (
+              {room.images.slice(1).map((img: string, idx: number) => (
                 <div key={idx} className="h-24 md:h-32 rounded-lg overflow-hidden bg-muted">
                   {/* eslint-disable-next-line @next/next/no-img-element */}
                   <img src={img} alt={`Room image ${idx + 1}`} className="w-full h-full object-cover" />
