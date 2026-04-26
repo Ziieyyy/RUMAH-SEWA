@@ -2,7 +2,7 @@ import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import { Input } from "@/components/ui/input";
+import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { createClient } from "@/lib/supabase/server";
 
 export const revalidate = 0; // Ensure data is always fresh
@@ -29,15 +29,63 @@ export default async function RoomsPage() {
 
   return (
     <div className="container mx-auto px-4 py-8 pt-24">
-      <div className="flex flex-col md:flex-row justify-between items-start md:items-center mb-8 gap-4">
-        <div>
-          <h1 className="text-3xl font-bold text-primary mb-2">Our Available Rooms</h1>
-          <p className="text-muted-foreground">Find the perfect room that fits your needs and budget.</p>
-        </div>
-        <div className="flex gap-2 w-full md:w-auto">
-          <Input placeholder="Search location or room..." className="bg-background w-full md:w-64" />
-          <Button variant="secondary">Search</Button>
-        </div>
+      <div className="mb-12">
+        <Card className="shadow-lg border-none bg-white text-primary overflow-hidden">
+          <CardContent className="p-0">
+            <div className="flex flex-col lg:flex-row items-stretch">
+              <div className="flex-grow grid grid-cols-1 md:grid-cols-3 divide-y lg:divide-y-0 lg:divide-x border-b lg:border-b-0 lg:border-r border-muted">
+                <div className="p-4 space-y-1 hover:bg-muted/30 transition-colors">
+                  <label className="text-[10px] font-bold uppercase tracking-wider text-muted-foreground">Location</label>
+                  <Select defaultValue="all">
+                    <SelectTrigger className="h-8 border-none bg-transparent shadow-none p-0 text-sm font-semibold focus:ring-0">
+                      <SelectValue placeholder="Location" />
+                    </SelectTrigger>
+                    <SelectContent>
+                      <SelectItem value="all">All Locations</SelectItem>
+                      <SelectItem value="kota-warisan">Kota Warisan</SelectItem>
+                      <SelectItem value="klia">KLIA Area</SelectItem>
+                    </SelectContent>
+                  </Select>
+                </div>
+                
+                <div className="p-4 space-y-1 hover:bg-muted/30 transition-colors">
+                  <label className="text-[10px] font-bold uppercase tracking-wider text-muted-foreground">Budget</label>
+                  <Select defaultValue="all">
+                    <SelectTrigger className="h-8 border-none bg-transparent shadow-none p-0 text-sm font-semibold focus:ring-0">
+                      <SelectValue placeholder="Budget" />
+                    </SelectTrigger>
+                    <SelectContent>
+                      <SelectItem value="all">Any Budget</SelectItem>
+                      <SelectItem value="under-400">Under RM400</SelectItem>
+                      <SelectItem value="400-600">RM400 - RM600</SelectItem>
+                      <SelectItem value="over-600">RM600+</SelectItem>
+                    </SelectContent>
+                  </Select>
+                </div>
+
+                <div className="p-4 space-y-1 hover:bg-muted/30 transition-colors">
+                  <label className="text-[10px] font-bold uppercase tracking-wider text-muted-foreground">Type</label>
+                  <Select defaultValue="all">
+                    <SelectTrigger className="h-8 border-none bg-transparent shadow-none p-0 text-sm font-semibold focus:ring-0">
+                      <SelectValue placeholder="Type" />
+                    </SelectTrigger>
+                    <SelectContent>
+                      <SelectItem value="all">Any Type</SelectItem>
+                      <SelectItem value="terrace">Terrace House</SelectItem>
+                      <SelectItem value="condo">Condominium</SelectItem>
+                    </SelectContent>
+                  </Select>
+                </div>
+              </div>
+
+              <div className="p-3 flex items-center justify-center bg-white">
+                <Button className="h-10 lg:h-full w-full lg:w-32 bg-primary hover:bg-secondary text-white font-bold shadow-md transition-all rounded-lg">
+                  Filter
+                </Button>
+              </div>
+            </div>
+          </CardContent>
+        </Card>
       </div>
 
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
