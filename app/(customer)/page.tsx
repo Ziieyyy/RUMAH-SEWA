@@ -61,72 +61,74 @@ export default function HomePage() {
       </section>
 
       {/* SECTION 2 - QUICK SEARCH */}
-      <section className="py-12 bg-cream/50 container mx-auto px-4">
-        <Card className="shadow-2xl border-none bg-white text-primary overflow-hidden">
-          <CardContent className="p-0">
-            <div className="flex flex-col md:flex-row items-stretch">
-              <div className="flex-grow grid grid-cols-1 md:grid-cols-3 divide-y md:divide-y-0 md:divide-x border-b md:border-b-0 md:border-r border-muted">
-                <div className="p-6 space-y-2 group hover:bg-muted/30 transition-colors">
-                  <label className="text-xs font-bold uppercase tracking-wider text-muted-foreground flex items-center gap-2">
-                    <MapPin className="w-3 h-3 text-secondary" /> Location
-                  </label>
-                  <Select defaultValue="all">
-                    <SelectTrigger className="h-10 border-none bg-transparent shadow-none p-0 text-primary font-semibold focus:ring-0 focus:ring-offset-0">
-                      <SelectValue placeholder="Where are you looking?" />
-                    </SelectTrigger>
-                    <SelectContent>
-                      <SelectItem value="all">All Locations</SelectItem>
-                      <SelectItem value="kota-warisan">Kota Warisan</SelectItem>
-                      <SelectItem value="klia">KLIA Area</SelectItem>
-                    </SelectContent>
-                  </Select>
-                </div>
-                
-                <div className="p-6 space-y-2 group hover:bg-muted/30 transition-colors">
-                  <label className="text-xs font-bold uppercase tracking-wider text-muted-foreground flex items-center gap-2">
-                    <Star className="w-3 h-3 text-secondary" /> Budget
-                  </label>
-                  <Select defaultValue="all">
-                    <SelectTrigger className="h-10 border-none bg-transparent shadow-none p-0 text-primary font-semibold focus:ring-0 focus:ring-offset-0">
-                      <SelectValue placeholder="Max Price" />
-                    </SelectTrigger>
-                    <SelectContent>
-                      <SelectItem value="all">Any Budget</SelectItem>
-                      <SelectItem value="under-400">Under RM400</SelectItem>
-                      <SelectItem value="400-600">RM400 - RM600</SelectItem>
-                      <SelectItem value="over-600">RM600+</SelectItem>
-                    </SelectContent>
-                  </Select>
+      <section className="py-12 bg-cream/50">
+        <div className="container mx-auto px-4">
+          <Card className="shadow-2xl border-none bg-white text-primary overflow-hidden">
+            <CardContent className="p-0">
+              <div className="flex flex-col md:flex-row items-stretch">
+                <div className="flex-grow grid grid-cols-1 md:grid-cols-3 divide-y md:divide-y-0 md:divide-x border-b md:border-b-0 md:border-r border-muted">
+                  <div className="p-6 space-y-2 group hover:bg-muted/30 transition-colors">
+                    <label className="text-xs font-bold uppercase tracking-wider text-muted-foreground flex items-center gap-2">
+                      <MapPin className="w-3 h-3 text-secondary" /> Location
+                    </label>
+                    <Select defaultValue="all">
+                      <SelectTrigger className="h-10 border-none bg-transparent shadow-none p-0 text-primary font-semibold focus:ring-0 focus:ring-offset-0">
+                        <SelectValue placeholder="Where are you looking?" />
+                      </SelectTrigger>
+                      <SelectContent>
+                        <SelectItem value="all">All Locations</SelectItem>
+                        <SelectItem value="kota-warisan">Kota Warisan</SelectItem>
+                        <SelectItem value="klia">KLIA Area</SelectItem>
+                      </SelectContent>
+                    </Select>
+                  </div>
+                  
+                  <div className="p-6 space-y-2 group hover:bg-muted/30 transition-colors">
+                    <label className="text-xs font-bold uppercase tracking-wider text-muted-foreground flex items-center gap-2">
+                      <Star className="w-3 h-3 text-secondary" /> Budget
+                    </label>
+                    <Select defaultValue="all">
+                      <SelectTrigger className="h-10 border-none bg-transparent shadow-none p-0 text-primary font-semibold focus:ring-0 focus:ring-offset-0">
+                        <SelectValue placeholder="Max Price" />
+                      </SelectTrigger>
+                      <SelectContent>
+                        <SelectItem value="all">Any Budget</SelectItem>
+                        <SelectItem value="under-400">Under RM400</SelectItem>
+                        <SelectItem value="400-600">RM400 - RM600</SelectItem>
+                        <SelectItem value="over-600">RM600+</SelectItem>
+                      </SelectContent>
+                    </Select>
+                  </div>
+
+                  <div className="p-6 space-y-2 group hover:bg-muted/30 transition-colors">
+                    <label className="text-xs font-bold uppercase tracking-wider text-muted-foreground flex items-center gap-2">
+                      <Home className="w-3 h-3 text-secondary" /> Property Type
+                    </label>
+                    <Select defaultValue="all">
+                      <SelectTrigger className="h-10 border-none bg-transparent shadow-none p-0 text-primary font-semibold focus:ring-0 focus:ring-offset-0">
+                        <SelectValue placeholder="Room Type" />
+                      </SelectTrigger>
+                      <SelectContent>
+                        <SelectItem value="all">Any Type</SelectItem>
+                        <SelectItem value="terrace">Terrace House</SelectItem>
+                        <SelectItem value="condo">Condominium</SelectItem>
+                      </SelectContent>
+                    </Select>
+                  </div>
                 </div>
 
-                <div className="p-6 space-y-2 group hover:bg-muted/30 transition-colors">
-                  <label className="text-xs font-bold uppercase tracking-wider text-muted-foreground flex items-center gap-2">
-                    <Home className="w-3 h-3 text-secondary" /> Property Type
-                  </label>
-                  <Select defaultValue="all">
-                    <SelectTrigger className="h-10 border-none bg-transparent shadow-none p-0 text-primary font-semibold focus:ring-0 focus:ring-offset-0">
-                      <SelectValue placeholder="Room Type" />
-                    </SelectTrigger>
-                    <SelectContent>
-                      <SelectItem value="all">Any Type</SelectItem>
-                      <SelectItem value="terrace">Terrace House</SelectItem>
-                      <SelectItem value="condo">Condominium</SelectItem>
-                    </SelectContent>
-                  </Select>
+                <div className="p-4 flex items-center justify-center bg-white">
+                  <Button size="lg" className="h-14 md:h-full w-full md:w-48 bg-primary hover:bg-secondary text-white font-bold shadow-lg transition-all rounded-xl" asChild>
+                    <Link href="/rooms">
+                      <Search className="w-5 h-5 mr-2" />
+                      Cari Sekarang
+                    </Link>
+                  </Button>
                 </div>
               </div>
-
-              <div className="p-4 flex items-center justify-center bg-white">
-                <Button size="lg" className="h-14 md:h-full w-full md:w-48 bg-primary hover:bg-secondary text-white font-bold shadow-lg transition-all rounded-xl" asChild>
-                  <Link href="/rooms">
-                    <Search className="w-5 h-5 mr-2" />
-                    Cari Sekarang
-                  </Link>
-                </Button>
-              </div>
-            </div>
-          </CardContent>
-        </Card>
+            </CardContent>
+          </Card>
+        </div>
       </section>
 
       {/* SECTION 4 - WHY CHOOSE US */}
