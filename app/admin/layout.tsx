@@ -11,7 +11,6 @@ const navItems = [
   { name: "Rooms", href: "/admin/rooms", icon: BedDouble },
   { name: "Properties", href: "/admin/properties", icon: Building2 },
   { name: "Bookings", href: "/admin/bookings", icon: CalendarCheck },
-  { name: "Leads", href: "/admin/leads", icon: Users },
 ];
 
 export default function AdminLayout({ children }: { children: React.ReactNode }) {
